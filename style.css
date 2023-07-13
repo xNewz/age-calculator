@@ -1,18 +1,18 @@
-* {
+* { /*​ เปลี่ยน font ทั้งหมดให้เป็น Kanit */
   font-family: "Kanit", sans-serif;
 }
 
-body {
+body { /*​ กำหนดสีพื้นหลัง */
   background-color: #f0f0f0;
 }
 
-h1 {
+h1 { /*​ กำหนดสีตัวอักษร */
   text-align: center;
   color: #333;
   margin-top: 30px;
 }
 
-.container {
+.container { /*​ กำหนดขนาดของกล่อง */
   max-width: 400px;
   margin: 0 auto;
   background-color: #fff;
@@ -21,21 +21,21 @@ h1 {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-label {
+label { /*​ กำหนดสีตัวอักษร */
   display: block;
   margin-bottom: 10px;
   font-weight: bold;
   color: #333;
 }
 
-input[type="date"] {
+input[type="date"] { /*​ กำหนดขนาดของกล่อง */
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
   box-sizing: border-box;
 }
 
-button {
+button { /*​ กำหนดขนาดของปุ่ม */
   display: block;
   background-color: #4caf50;
   color: #fff;
@@ -47,15 +47,15 @@ button {
   margin-bottom: 10px;
 }
 
-#resetBtn {
+#resetBtn { /*​ กำหนดสีปุ่ม */
   background-color: #f44336;
 }
 
-button:hover {
+button:hover { /*​ กำหนดสีปุ่มเมื่อเมาส์ไปชี้ */
   background-color: #45a049;
 }
 
-#result {
+#result { /*​ กำหนดสีตัวอักษร */
   margin-top: 15px;
   text-align: center;
   font-size: 18px;

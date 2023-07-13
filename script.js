@@ -1,27 +1,27 @@
-document.getElementById("calBtn").addEventListener("click", () => {
-  if (document.getElementById("birth-date").value == "") {
+document.getElementById("calBtn").addEventListener("click", () => { // เมื่อกดปุ่มคำนวณ
+  if (document.getElementById("birth-date").value == "") { // ถ้าไม่ได้กรอกวันเกิด
     document.getElementById("result").innerHTML =
-      "กรุณากรอกวันเกิดของคุณก่อน !!!";
+      "กรุณากรอกวันเกิดของคุณก่อน !!!"; // แสดงข้อความ
     return;
   }
-  var birthDate = new Date(document.getElementById("birth-date").value);
-  var currentDate = new Date();
+  var birthDate = new Date(document.getElementById("birth-date").value); // ดึงค่าวันเกิดมาเก็บไว้ในตัวแปร birthDate
+  var currentDate = new Date(); // ดึงค่าวันที่ปัจจุบันมาเก็บไว้ในตัวแปร currentDate
 
-  var ageInMilliseconds = currentDate - birthDate;
-  var ageInSeconds = ageInMilliseconds / 1000;
-  var ageInMinutes = ageInSeconds / 60;
-  var ageInHours = ageInMinutes / 60;
-  var ageInDays = ageInHours / 24;
-  var ageInMonths = ageInDays / 30.4375;
-  var ageInYears = ageInDays / 365.25;
+  var ageInMilliseconds = currentDate - birthDate; // คำนวณอายุเป็นมิลลิวินาที
+  var ageInSeconds = ageInMilliseconds / 1000; // คำนวณอายุเป็นวินาที
+  var ageInMinutes = ageInSeconds / 60; // คำนวณอายุเป็นนาที
+  var ageInHours = ageInMinutes / 60; // คำนวณอายุเป็นชั่วโมง
+  var ageInDays = ageInHours / 24; // คำนวณอายุเป็นวัน
+  var ageInMonths = ageInDays / 30.4375; // คำนวณอายุเป็นเดือน
+  var ageInYears = ageInDays / 365.25; // คำนวณอายุเป็นปี
   
-  var years = Math.floor(ageInYears);
-  var months = Math.floor(ageInMonths % 12);
-  var days = Math.floor(ageInDays % 30.4375);
-  var hours = Math.floor(ageInHours % 24);
+  var years = Math.floor(ageInYears); // ปัดเศษทศนิยมลง เพื่อให้ได้เฉพาะจำนวนปี
+  var months = Math.floor(ageInMonths % 12); // ปัดเศษทศนิยมลง เพื่อให้ได้เฉพาะจำนวนเดือน
+  var days = Math.floor(ageInDays % 30.4375); // ปัดเศษทศนิยมลง เพื่อให้ได้เฉพาะจำนวนวัน
+  var hours = Math.floor(ageInHours % 24); // ปัดเศษทศนิยมลง เพื่อให้ได้เฉพาะจำนวนชั่วโมง
 
-  var zodiacYear = (birthDate.getFullYear() + 8) % 12;
-  var zodiacSign = getZodiacSign(zodiacYear);
+  var zodiacYear = (birthDate.getFullYear() + 8) % 12; // คำนวณหาปีของราศี โดยเอาปีเกิด + 8 แล้ว mod 12
+  var zodiacSign = getZodiacSign(zodiacYear); // ดึงค่าราศีมาเก็บไว้ในตัวแปร zodiacSign
 
   document.getElementById("result").innerHTML =
     "อายุของคุณคือ " +
@@ -35,7 +35,7 @@ document.getElementById("calBtn").addEventListener("click", () => {
     " ชั่วโมง" +
     "<br>" +
     "ปีของราศีของคุณคือ " +
-    zodiacSign;
+    zodiacSign; // แสดงผลลัพธ์
 });
 
 function getZodiacSign(year) {
@@ -54,10 +54,10 @@ function getZodiacSign(year) {
     "กุน",
   ];
 
-  return zodiacSigns[year];
+  return zodiacSigns[year]; // คืนค่าราศี โดยดึงจากอาเรย์ zodiacSigns โดยใช้ตัวแปร year เป็น index
 }
 
-document.getElementById("resetBtn").addEventListener("click", () => {
+document.getElementById("resetBtn").addEventListener("click", () => { // เมื่อกดปุ่มรีเซ็ต
   document.getElementById("birth-date").value = "";
   document.getElementById("result").innerHTML = "";
 });
